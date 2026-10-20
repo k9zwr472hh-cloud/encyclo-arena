@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10131c">
+  <title>Encyclo Arena</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>Encyclo <span>Arena</span></h1>
+    <p>La connaissance devient une bataille.</p>
+  </header>
+
+  <main>
+    <section id="auth">
+      <h2>Entre dans l'arène</h2>
+      <input id="username" placeholder="Ton pseudo" autocomplete="username">
+      <input id="password" type="password" placeholder="Mot de passe" autocomplete="current-password">
+      <div class="actions">
+        <button id="register">Créer un compte</button>
+        <button id="login">Se connecter</button>
+      </div>
+      <p id="message" role="status"></p>
+    </section>
+
+    <section id="game" hidden>
+      <div class="profile">
+        <h2>Salut <span id="player"></span> !</h2>
+        <button id="logout">Déconnexion</button>
+      </div>
+      <div class="stats">
+        <article><strong id="coins">0</strong><p>Pièces</p></article>
+        <article><strong id="cardsCount">0</strong><p>Cartes</p></article>
+      </div>
+      <section class="panel">
+        <h2>Booster mystère</h2>
+        <p>Découvre une carte encyclopédique aléatoire.</p>
+        <button id="pack">Ouvrir un booster — 100 pièces</button>
+        <div id="newCard"></div>
+      </section>
+      <section class="panel">
+        <h2>Ma collection</h2>
+        <div id="collection" class="cards"></div>
+      </section>
+      <section class="panel">
+        <h2>Classement</h2>
+        <ol id="leaderboard"></ol>
+      </section>
+    </section>
+  </main>
+  <footer>Encyclo Arena · Apprends, collectionne, domine.</footer>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
